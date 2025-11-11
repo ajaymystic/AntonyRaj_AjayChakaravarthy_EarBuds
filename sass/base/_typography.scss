@@ -1,0 +1,52 @@
+@use '../abstracts' as *;
+
+// Typography styles
+body {
+    font-family: $font-primary;
+    font-weight: $font-weight-regular;
+    line-height: 1.6;
+    color: $dark-gray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    margin-bottom: $spacing-sm;
+}
+
+h1 {
+    font-size: 2.5rem;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        font-size: 4.5rem;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 2.5rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        font-size: 3rem;
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 1.75rem;
+    }
+}
+
+p {
+    margin-bottom: $spacing-sm;
+    line-height: 1.6;
+}

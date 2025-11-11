@@ -1,0 +1,220 @@
+@use '../abstracts' as *;
+
+model-viewer {
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    background-color: $off-white;
+    margin: 0 auto;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+
+    @media (min-width: $breakpoint-tablet) {
+        height: 600px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        height: 700px;
+    }
+}
+
+.Hotspot {
+    background: url(../images/hotspot.svg) center no-repeat;
+    background-size: contain;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 40px;
+    padding: 8px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    width: 40px;
+
+    &:not([data-visible]) {
+        opacity: 0;
+        height: 40px;
+        pointer-events: none;
+        width: 40px;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &:focus {
+        border: 4px solid $accent-red;
+        height: 40px;
+        outline: none;
+        width: 40px;
+    }
+
+    > * {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+.Hotspot:not([data-visible]) > * {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(calc(-50% + 4px));
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.HotspotAnnotation {
+    visibility: hidden;
+    background: $white;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    color: $dark-gray;
+    display: block;
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+    left: calc(100% + 1em);
+    max-width: 250px;
+    overflow-wrap: break-word;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    width: max-content;
+    text-align: left;
+    border: 2px solid $primary-gold;
+
+    @media (max-width: $breakpoint-tablet) {
+        max-width: 200px;
+        font-size: 14px;
+        padding: 0.75em;
+        left: calc(100% + 0.5em);
+    }
+
+    h2 {
+        font-size: 18px;
+        font-weight: $font-weight-bold;
+        margin-bottom: 0.5em;
+        color: $black;
+        background: linear-gradient(135deg, $primary-gold 0%, $gold-dark 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        @media (max-width: $breakpoint-tablet) {
+            font-size: 16px;
+        }
+    }
+
+    p {
+        color: $dark-gray;
+        line-height: 1.6;
+        font-weight: $font-weight-regular;
+        margin-bottom: 0;
+        font-size: 14px;
+
+        @media (max-width: $breakpoint-tablet) {
+            font-size: 13px;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: $radius-sm;
+        margin-top: 0.75em;
+        box-shadow: $shadow-sm;
+    }
+}
+
+.progress-bar {
+    display: block;
+    width: 33%;
+    height: 10%;
+    max-height: 2%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 25px;
+    box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &.hide {
+        visibility: hidden;
+        transition: visibility 0.3s;
+    }
+}
+
+.update-bar {
+    background-color: $primary-gold;
+    width: 0%;
+    height: 100%;
+    border-radius: 25px;
+    float: left;
+    transition: width 0.3s;
+}
+
+#ar-button {
+    background-color: $white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    bottom: 16px;
+    padding: 10px 20px;
+    font-family: $font-primary;
+    font-size: 14px;
+    color: $primary-gold;
+    height: 36px;
+    line-height: 16px;
+    border-radius: 18px;
+    border: 2px solid $primary-gold;
+    transition: all $transition-fast;
+
+    &:active {
+        background-color: $off-white;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: $primary-gold;
+        color: $white;
+        box-shadow: $shadow-gold;
+    }
+}
+
+@keyframes circle {
+    from { 
+        transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); 
+    }
+    to { 
+        transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); 
+    }
+}
+
+@keyframes elongate {
+    from { 
+        transform: translateX(100px); 
+    }
+    to { 
+        transform: translateX(-100px); 
+    }
+}
+
+model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+}
+
+model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+}
+
+model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+}

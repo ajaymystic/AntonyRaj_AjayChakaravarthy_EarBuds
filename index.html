@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxAudio Buds Pro - Premium Wireless Earbuds</title>
+    <meta name="description" content="Experience premium sound with LuxAudio Buds Pro">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">LuxAudio</div>
+            <ul class="nav__menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#ar-view">AR View</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">LuxAudio Buds Pro</h1>
+            <p class="hero__subtitle">Where luxury meets sound</p>
+            <p class="hero__description">Metallic gold elegance with studio-quality audio</p>
+        </div>
+    </section>
+
+    <!-- AR Viewer Section -->
+    <section id="ar-view" class="ar-section">
+        <div class="container">
+            <h2 class="section-title">Experience in AR</h2>
+            <p class="section-subtitle">Hover over hotspots to explore features</p>
+            
+            <!-- Model Viewer Component -->
+            <model-viewer 
+                id="model" 
+                src="model/Earbuds_Final.gltf" 
+                alt="LuxAudio Buds Pro Earbuds"
+                camera-controls 
+                tone-mapping="neutral" 
+                shadow-intensity="1"
+                auto-rotate
+                loading="eager">
+                
+                <!-- Hotspot 1 - Active Noise Cancellation -->
+                <button class="Hotspot" slot="hotspot-1" data-position="-0.0057330450639131525m 0.006959687775297357m -0.009576333981503983m" data-normal="0.610811590237061m 0.771057060157302m 0.17994502275320498m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation" id="hotspot-1"></div>
+                </button>
+                
+                <!-- Hotspot 2 - Battery Life -->
+                <button class="Hotspot" slot="hotspot-2" data-position="0.01643032118276817m -0.00019414391082076335m 0.018206930059844174m" data-normal="0.37403644889649734m 0.027663765481961276m -0.9270013219927234m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation" id="hotspot-2"></div>
+                </button>
+                
+                <!-- Hotspot 3 - Touch Controls -->
+                <button class="Hotspot" slot="hotspot-3" data-position="0.005588288357312704m 0.004227195657442191m 0.018518831351273572m" data-normal="0.03677855021345029m 0.9820591825931239m 0.18495161564236848m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation" id="hotspot-3"></div>
+                </button>
+                
+                <!-- Progress Bar -->
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Premium Features</h2>
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">🎵</div>
+                    <h3 class="feature-card__title">Active Noise Cancellation</h3>
+                    <p class="feature-card__text">Industry-leading ANC technology with titanium drivers blocks out distractions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🔋</div>
+                    <h3 class="feature-card__title">Extended Battery Life</h3>
+                    <p class="feature-card__text">Up to 10 hours playback on a single charge</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🎤</div>
+                    <h3 class="feature-card__title">Dual Microphones</h3>
+                    <p class="feature-card__text">Crystal clear calls with advanced dual-mic audio pickup</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 LuxAudio. Premium Audio Experience.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

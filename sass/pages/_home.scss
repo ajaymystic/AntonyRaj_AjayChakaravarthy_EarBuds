@@ -55,6 +55,338 @@
     &__subtitle {
         font-size: 1.25rem;
         font-weight: $font-weight-light;
+        margin-bottom: $spacing-sm;
+        color: $light-gray;
+
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__description {
+        font-size: 1rem;
+        color: $medium-gray;
+        max-width: 600px;
+        margin: 0 auto $spacing-md;
+        line-height: 1.6;
+
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 1.125rem;
+        }
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-xs;
+        margin-top: $spacing-md;
+
+        @media (min-width: $breakpoint-tablet) {
+            flex-direction: row;
+            justify-content: center;
+            gap: $spacing-md;
+        }
+    }
+}
+
+.price-tag {
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+    color: $primary-gold;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 2.5rem;
+    }
+}
+
+.price-note {
+    font-size: 0.875rem;
+    color: $light-gray;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: $radius-md;
+}
+
+// AR Section
+.ar-section {
+    padding: $spacing-xl 0;
+    background-color: $white;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xxl 0;
+    }
+}
+
+.ar-instructions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.ar-instruction-card {
+    text-align: center;
+    padding: $spacing-md;
+    background-color: $off-white;
+    border-radius: $radius-lg;
+}
+
+.instruction-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: $spacing-sm;
+}
+
+.ar-instruction-card h4 {
+    font-size: 1.125rem;
+    font-weight: $font-weight-bold;
+    color: $black;
+    margin-bottom: 0.5rem;
+}
+
+.ar-instruction-card p {
+    font-size: 0.875rem;
+    color: $medium-gray;
+    margin: 0;
+}
+
+// Features Section
+.features {
+    padding: $spacing-xl 0;
+    background-color: $off-white;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xxl 0;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
+        margin-top: $spacing-lg;
+
+        @media (min-width: $breakpoint-tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: $spacing-lg;
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+.feature-card {
+    background-color: $white;
+    padding: $spacing-md;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    text-align: center;
+    transition: transform $transition-normal, box-shadow $transition-normal;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-md;
+    }
+
+    &__icon {
+        font-size: 3rem;
+        margin-bottom: $spacing-sm;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: $font-weight-bold;
+        color: $black;
+        margin-bottom: $spacing-sm;
+    }
+
+    &__text {
+        font-size: 0.95rem;
+        color: $medium-gray;
+        line-height: 1.6;
+    }
+}
+
+// Color Section
+.color-section {
+    padding: $spacing-xl 0;
+    background-color: $white;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xxl 0;
+    }
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-lg;
+    }
+}
+
+.color-card {
+    background-color: $off-white;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-sm;
+    transition: transform $transition-normal, box-shadow $transition-normal;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-md;
+    }
+}
+
+.color-image-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: $light-gray;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.color-card h3 {
+    padding: $spacing-sm $spacing-md 0;
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    color: $black;
+}
+
+.color-card p {
+    padding: $spacing-xs $spacing-md;
+    font-size: 0.875rem;
+    color: $medium-gray;
+    line-height: 1.6;
+}
+
+.color-badge {
+    display: inline-block;
+    margin: 0 $spacing-md $spacing-md;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, $primary-gold 0%, $gold-dark 100%);
+    color: $white;
+    font-size: 0.75rem;
+    font-weight: $font-weight-bold;
+    border-radius: $radius-md;
+    text-transform: uppercase;
+}
+
+// Explode Section Additions
+.explode-description {
+    max-width: 700px;
+    margin: $spacing-lg auto 0;
+    text-align: center;
+    font-size: 1rem;
+    color: $dark-gray;
+    line-height: 1.6;
+}
+
+// X-Ray Section Additions
+.xray-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin-top: $spacing-xl;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-lg;
+    }
+}
+
+.xray-detail-card {
+    background-color: $white;
+    padding: $spacing-md;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+
+    h4 {
+        font-size: 1.125rem;
+        font-weight: $font-weight-bold;
+        color: $black;
+        margin-bottom: $spacing-xs;
+    }
+
+    p {
+        font-size: 0.875rem;
+        color: $medium-gray;
+        line-height: 1.6;
+        margin: 0;
+    }
+}
+@use '../abstracts' as *;
+
+// Hero Section
+.hero {
+    background: linear-gradient(135deg, $black 0%, $dark-gray 100%);
+    color: $white;
+    padding: $spacing-xl 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xxl 0;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+
+        @media (min-width: $breakpoint-tablet) {
+            width: 800px;
+            height: 800px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: $z-base;
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-sm;
+        background: linear-gradient(135deg, $white 0%, $primary-gold 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 3.5rem;
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+            font-size: 4.5rem;
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.25rem;
+        font-weight: $font-weight-light;
 <<<<<<< Updated upstream
         margin-bottom: $spacing-xs;
 =======

@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+.header {
+    background: linear-gradient(135deg, $white 0%, $off-white 100%);
+    box-shadow: $shadow-sm;
+    position: sticky;
+    top: 0;
+    z-index: $z-sticky;
+    padding: $spacing-sm 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-sm;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: 0 $spacing-md;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        padding: 0 $spacing-lg;
+    }
+
+    &__logo {
+        font-size: 1.5rem;
+        font-weight: $font-weight-bold;
+        background: linear-gradient(135deg, $primary-gold 0%, $gold-dark 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 1.75rem;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        list-style: none;
+        gap: $spacing-sm;
+
+        @media (min-width: $breakpoint-tablet) {
+            gap: $spacing-md;
+        }
+
+        li a {
+            color: $dark-gray;
+            font-weight: $font-weight-medium;
+            font-size: 0.875rem;
+            transition: color $transition-fast;
+
+            @media (min-width: $breakpoint-tablet) {
+                font-size: 1rem;
+            }
+
+            &:hover {
+                color: $primary-gold;
+            }
+        }
+    }
+}

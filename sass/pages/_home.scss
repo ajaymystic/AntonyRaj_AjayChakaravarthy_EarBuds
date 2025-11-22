@@ -8,9 +8,13 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    min-height: 90vh; // Make hero taller
+    display: flex;
+    align-items: center;
 
     @media (min-width: $breakpoint-tablet) {
         padding: $spacing-xxl 0;
+        min-height: 100vh;
     }
 
     &::before {
@@ -32,6 +36,7 @@
     &__content {
         position: relative;
         z-index: $z-base;
+        width: 100%;
     }
 
     &__title {
@@ -88,24 +93,35 @@
             gap: $spacing-md;
         }
     }
-}
 
-.price-tag {
-    font-size: 2rem;
-    font-weight: $font-weight-bold;
-    color: $primary-gold;
+    &__scroll-hint {
+        margin-top: $spacing-xl;
+        animation: bounce 2s infinite;
 
-    @media (min-width: $breakpoint-tablet) {
-        font-size: 2.5rem;
+        p {
+            font-size: 0.875rem;
+            color: $medium-gray;
+            margin-bottom: 0.5rem;
+        }
+
+        .scroll-arrow {
+            font-size: 2rem;
+            color: $primary-gold;
+            display: block;
+        }
     }
 }
 
-.price-note {
-    font-size: 0.875rem;
-    color: $light-gray;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: $radius-md;
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 // AR Section
@@ -329,6 +345,7 @@
         line-height: 1.6;
         margin: 0;
     }
+
 }
 @use '../abstracts' as *;
 
@@ -387,11 +404,7 @@
     &__subtitle {
         font-size: 1.25rem;
         font-weight: $font-weight-light;
-<<<<<<< Updated upstream
-        margin-bottom: $spacing-xs;
-=======
         margin-bottom: $spacing-sm;
->>>>>>> Stashed changes
         color: $light-gray;
 
         @media (min-width: $breakpoint-tablet) {
@@ -402,19 +415,14 @@
     &__description {
         font-size: 1rem;
         color: $medium-gray;
-<<<<<<< Updated upstream
-=======
         max-width: 600px;
         margin: 0 auto $spacing-md;
         line-height: 1.6;
->>>>>>> Stashed changes
 
         @media (min-width: $breakpoint-tablet) {
             font-size: 1.125rem;
         }
     }
-<<<<<<< Updated upstream
-=======
 
     &__price {
         display: flex;
@@ -447,7 +455,6 @@
     background-color: rgba(255, 255, 255, 0.1);
     padding: 0.5rem 1rem;
     border-radius: $radius-md;
->>>>>>> Stashed changes
 }
 
 // AR Section
@@ -460,8 +467,6 @@
     }
 }
 
-<<<<<<< Updated upstream
-=======
 .ar-instructions {
     display: grid;
     grid-template-columns: 1fr;
@@ -499,7 +504,6 @@
     margin: 0;
 }
 
->>>>>>> Stashed changes
 // Features Section
 .features {
     padding: $spacing-xl 0;
@@ -516,11 +520,6 @@
         margin-top: $spacing-lg;
 
         @media (min-width: $breakpoint-tablet) {
-<<<<<<< Updated upstream
-            grid-template-columns: repeat(3, 1fr);
-            gap: $spacing-lg;
-        }
-=======
             grid-template-columns: repeat(2, 1fr);
             gap: $spacing-lg;
         }
@@ -528,7 +527,6 @@
         @media (min-width: $breakpoint-desktop) {
             grid-template-columns: repeat(3, 1fr);
         }
->>>>>>> Stashed changes
     }
 }
 
@@ -562,8 +560,6 @@
         color: $medium-gray;
         line-height: 1.6;
     }
-<<<<<<< Updated upstream
-=======
 }
 
 // Color Section
@@ -682,5 +678,5 @@
         line-height: 1.6;
         margin: 0;
     }
->>>>>>> Stashed changes
+
 }

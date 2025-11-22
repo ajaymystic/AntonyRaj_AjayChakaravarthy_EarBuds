@@ -16,9 +16,9 @@
             <div class="nav__logo">LuxAudio</div>
             <ul class="nav__menu">
                 <li><a href="#hero">Home</a></li>
+                <li><a href="#explode-view-section">Explore</a></li>
                 <li><a href="#specs">Specs</a></li>
                 <li><a href="#xray">X-Ray</a></li>
-                <li><a href="#explode-view-section">360° View</a></li>
                 <li><a href="#colors">Colors</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#ar-view">AR View</a></li>
@@ -35,6 +35,24 @@
             <div class="hero__price">
                 <span class="price-tag">$299.99</span>
                 <span class="price-note">Free shipping worldwide</span>
+            </div>
+            <div class="hero__scroll-hint">
+                <p>Scroll to explore</p>
+                <span class="scroll-arrow">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explode View Canvas Animation Section - RIGHT AFTER HERO -->
+    <section id="explode-view-section" class="explode-section">
+        <div class="container">
+            <h2 class="section-title">Explore Every Detail</h2>
+            <p class="section-subtitle">Scroll through a 360° exploded view revealing premium craftsmanship</p>
+            
+            <canvas id="explode-view"></canvas>
+
+            <div class="explode-description">
+                <p>Our earbuds feature precision-engineered assembly with over 50 individual components working in perfect harmony. From the acoustic chamber to the charging contacts, every element is crafted for optimal performance and durability.</p>
             </div>
         </div>
     </section>
@@ -149,20 +167,6 @@
         </div>
     </section>
 
-    <!-- Explode View Canvas Animation Section -->
-    <section id="explode-view-section" class="explode-section">
-        <div class="container">
-            <h2 class="section-title">360° Exploded View</h2>
-            <p class="section-subtitle">Scroll to explore every component and assembly detail</p>
-            
-            <canvas id="explode-view"></canvas>
-
-            <div class="explode-description">
-                <p>Our earbuds feature a precision-engineered assembly with over 50 individual components working in perfect harmony. From the acoustic chamber to the charging contacts, every element is crafted for optimal performance and durability.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Color Variants Section -->
     <section id="colors" class="color-section">
         <div class="container">
@@ -193,6 +197,47 @@
                     <h3>Pearl White</h3>
                     <p>Pristine pearl white with a subtle pearlescent shimmer. Minimalist design meets modern aesthetics in this clean, sophisticated finish.</p>
                     <span class="color-badge">Limited Edition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Premium Features</h2>
+            <p class="section-subtitle">Engineered for the discerning audiophile</p>
+            
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">🎵</div>
+                    <h3 class="feature-card__title">Active Noise Cancellation</h3>
+                    <p class="feature-card__text">Industry-leading hybrid ANC technology with titanium drivers blocks out up to 40dB of ambient noise. Dual-microphone array ensures crystal-clear isolation in any environment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🔋</div>
+                    <h3 class="feature-card__title">Extended Battery Life</h3>
+                    <p class="feature-card__text">Get up to 10 hours of continuous playback on a single charge, with an additional 20 hours from the charging case. Fast charge technology delivers 2 hours of playback in just 10 minutes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🎤</div>
+                    <h3 class="feature-card__title">Crystal Clear Calls</h3>
+                    <p class="feature-card__text">Dual-microphone system with advanced beamforming and wind noise reduction ensures your voice is heard loud and clear, even in noisy environments.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">💧</div>
+                    <h3 class="feature-card__title">IPX7 Water Resistance</h3>
+                    <p class="feature-card__text">Fully waterproof design withstands sweat, rain, and accidental submersion. Perfect companion for workouts, runs, and all-weather use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🎚️</div>
+                    <h3 class="feature-card__title">Customizable EQ</h3>
+                    <p class="feature-card__text">Fine-tune your sound with the LuxAudio app. Choose from presets or create your own custom EQ profile to match your musical preferences.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🌐</div>
+                    <h3 class="feature-card__title">Multi-Device Pairing</h3>
+                    <p class="feature-card__text">Seamlessly connect to two devices simultaneously. Switch between your phone and laptop without missing a beat.</p>
                 </div>
             </div>
         </div>
@@ -263,47 +308,6 @@
                     <span class="instruction-icon">ℹ️</span>
                     <h4>Explore Hotspots</h4>
                     <p>Hover over the info points to learn about key features.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Grid -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Premium Features</h2>
-            <p class="section-subtitle">Engineered for the discerning audiophile</p>
-            
-            <div class="features__grid">
-                <div class="feature-card">
-                    <div class="feature-card__icon">🎵</div>
-                    <h3 class="feature-card__title">Active Noise Cancellation</h3>
-                    <p class="feature-card__text">Industry-leading hybrid ANC technology with titanium drivers blocks out up to 40dB of ambient noise. Dual-microphone array ensures crystal-clear isolation in any environment.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-card__icon">🔋</div>
-                    <h3 class="feature-card__title">Extended Battery Life</h3>
-                    <p class="feature-card__text">Get up to 10 hours of continuous playback on a single charge, with an additional 20 hours from the charging case. Fast charge technology delivers 2 hours of playback in just 10 minutes.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-card__icon">🎤</div>
-                    <h3 class="feature-card__title">Crystal Clear Calls</h3>
-                    <p class="feature-card__text">Dual-microphone system with advanced beamforming and wind noise reduction ensures your voice is heard loud and clear, even in noisy environments.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-card__icon">💧</div>
-                    <h3 class="feature-card__title">IPX7 Water Resistance</h3>
-                    <p class="feature-card__text">Fully waterproof design withstands sweat, rain, and accidental submersion. Perfect companion for workouts, runs, and all-weather use.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-card__icon">🎚️</div>
-                    <h3 class="feature-card__title">Customizable EQ</h3>
-                    <p class="feature-card__text">Fine-tune your sound with the LuxAudio app. Choose from presets or create your own custom EQ profile to match your musical preferences.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-card__icon">🌐</div>
-                    <h3 class="feature-card__title">Multi-Device Pairing</h3>
-                    <p class="feature-card__text">Seamlessly connect to two devices simultaneously. Switch between your phone and laptop without missing a beat.</p>
                 </div>
             </div>
         </div>
@@ -396,9 +400,9 @@
                     <a href="#" class="btn btn-secondary">Try Risk-Free for 30 Days</a>
                 </div>
                 <div class="cta-features">
-                    <span> Free Worldwide Shipping</span>
-                    <span> 2-Year Warranty</span>
-                    <span> 30-Day Money Back</span>
+                    <span>✓ Free Worldwide Shipping</span>
+                    <span>✓ 2-Year Warranty</span>
+                    <span>✓ 30-Day Money Back</span>
                 </div>
             </div>
         </div>

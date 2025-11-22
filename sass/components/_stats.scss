@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+.stats-section {
+    padding: $spacing-lg 0;
+    background-color: $white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: $spacing-lg;
+    }
+}
+
+.stat-card {
+    text-align: center;
+    padding: $spacing-md;
+    background-color: $off-white;
+    border-radius: $radius-lg;
+    transition: transform $transition-normal;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    background: linear-gradient(135deg, $primary-gold 0%, $gold-dark 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: $spacing-xs;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 3rem;
+    }
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: $medium-gray;
+    font-weight: $font-weight-medium;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 1rem;
+    }
+}

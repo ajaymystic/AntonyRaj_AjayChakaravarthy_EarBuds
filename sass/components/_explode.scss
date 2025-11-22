@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.explode-section {
+    min-height: 100vh;
+    background-color: $white;
+    padding: $spacing-xl 0;
+    position: relative;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xxl 0;
+    }
+}
+
+#explode-view {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    display: block;
+    margin: $spacing-lg auto 0;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    background-color: $off-white;
+
+    @media (max-width: $breakpoint-tablet) {
+        max-width: 100%;
+    }
+}

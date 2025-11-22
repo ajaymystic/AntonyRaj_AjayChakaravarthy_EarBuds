@@ -1,0 +1,115 @@
+@use '../abstracts' as *;
+
+.xray-section {
+    padding: $spacing-xl 0;
+    background-color: $off-white;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xxl 0;
+    }
+}
+
+.xray-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    background-image: url('../images/xray_render1.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-tablet) {
+        height: 600px;
+    }
+}
+
+#divisor {
+    width: 50%;
+    height: 100%;
+    background-image: url('../images/no_xray.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.1s ease-out;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: $white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background: $primary-gold;
+        border: 3px solid $white;
+        border-radius: $radius-round;
+        box-shadow: $shadow-md;
+        z-index: 10;
+    }
+}
+
+#slider {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, $primary-gold 0%, $primary-gold 50%, $medium-gray 50%, $medium-gray 100%);
+    outline: none;
+    cursor: pointer;
+
+    @media (min-width: $breakpoint-tablet) {
+        bottom: -80px;
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: $radius-round;
+        background: $primary-gold;
+        cursor: pointer;
+        box-shadow: $shadow-sm;
+        transition: transform $transition-fast;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+        border-radius: $radius-round;
+        background: $primary-gold;
+        cursor: pointer;
+        box-shadow: $shadow-sm;
+        border: none;
+        transition: transform $transition-fast;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}

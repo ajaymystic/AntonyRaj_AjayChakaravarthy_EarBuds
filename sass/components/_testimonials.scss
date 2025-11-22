@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+.testimonials-section {
+    padding: $spacing-xl 0;
+    background-color: $white;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xxl 0;
+    }
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-lg;
+    }
+}
+
+.testimonial-card {
+    background-color: $off-white;
+    padding: $spacing-md;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    transition: transform $transition-normal, box-shadow $transition-normal;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-md;
+    }
+}
+
+.stars {
+    font-size: 1.25rem;
+    margin-bottom: $spacing-sm;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+    color: $dark-gray;
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    strong {
+        font-size: 1rem;
+        color: $black;
+        font-weight: $font-weight-bold;
+    }
+
+    span {
+        font-size: 0.875rem;
+        color: $medium-gray;
+    }
+}

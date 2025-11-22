@@ -19,6 +19,12 @@
     
     // Variables - Navigation
     const navLinks = document.querySelectorAll(".nav__menu a");
+    
+    // Variables - Mobile Menu
+    const hamburger = document.querySelector("#hamburger");
+    const mobileMenu = document.querySelector("#mobile-menu");
+    const closeButton = document.querySelector("#close-menu");
+    const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
 
     // Hotspot data for AR model
     const infoBoxes = [
@@ -27,16 +33,19 @@
             text: "Noise-cancelling microphones and a rear copper shield are optimally placed to quickly detect outside noises, working together to counter noise before it disturbs your experience.",
             image: "images/render4.jpg"
 
+
         },
         {
             title: 'Comfortable fit',
             text: "Three pairs of ultra comfortable silicone tips are included. The tips create an acoustic seal that blocks outside audio and secures the earbuds in place.",
+
             image: "images/render3.jpg"
         },
         {
             title: "360 AUDIO",
             text: "360 Audio places sound all around you, while Dolby Head Tracking™ technology delivers an incredible three-dimensional listening experience.",
             image: "images/render5.jpg"
+
 
         },
         {
@@ -94,13 +103,24 @@
 
     // I'm moving the X-ray divisor based on slider value
     function moveDivisor() {
-        divisor.style.width = `${slider.value}%`;
+        if (divisor && slider) {
+            divisor.style.width = `${slider.value}%`;
+        }
     }
 
     // I'm resetting the slider to middle position
     function resetSlider() {
-        slider.value = 50;
-        moveDivisor();
+        if (slider) {
+            slider.value = 50;
+            moveDivisor();
+        }
+    }
+
+    // I'm toggling the mobile menu
+    function toggleMobileMenu() {
+        if (mobileMenu) {
+            mobileMenu.classList.toggle("open");
+        }
     }
 
     // I'm setting up the canvas for explode view animation
@@ -118,12 +138,14 @@
 
         for (let i = 0; i < frameCount; i++) {
             const img = new Image();
-            img.src = `images/explode_${(i + 1).toString().padStart(4, '0')}.webp`;
+            img.src = `images/explode/explode_${i}.webp`;
             images.push(img);
         }
 
         // I'm rendering the first frame when it loads
-        images[0].addEventListener('load', render);
+        if (images[0]) {
+            images[0].addEventListener('load', render);
+        }
     }
 
     // I'm rendering the current frame to canvas
@@ -424,11 +446,26 @@
         }
 
         // I'm setting up X-ray slider
-        // if (slider && divisor) {
+        if (slider && divisor) {
             slider.addEventListener("input", moveDivisor);
             window.addEventListener("load", moveDivisor);
             resetSlider();
-        // }
+        }
+
+        // I'm setting up mobile menu
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener("click", toggleMobileMenu);
+        }
+        
+        if (closeButton) {
+            closeButton.addEventListener("click", toggleMobileMenu);
+        }
+        
+        if (mobileMenuLinks) {
+            mobileMenuLinks.forEach(function(link) {
+                link.addEventListener("click", toggleMobileMenu);
+            });
+        }
 
         // I'm setting up canvas animation
         setupCanvas();

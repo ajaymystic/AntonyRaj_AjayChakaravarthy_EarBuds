@@ -39,11 +39,12 @@
     }
 
     &__menu {
-        display: flex;
+        display: none; // Hidden on mobile
         list-style: none;
         gap: $spacing-sm;
 
         @media (min-width: $breakpoint-tablet) {
+            display: flex; // Show on tablet+
             gap: $spacing-md;
         }
 
@@ -61,5 +62,140 @@
                 color: $primary-gold;
             }
         }
+    }
+}
+
+// Hamburger button
+.hamburger {
+    display: flex; // Show on mobile
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: $z-sticky + 10;
+
+    @media (min-width: $breakpoint-tablet) {
+        display: none; // Hide on tablet+
+    }
+
+    span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: $primary-gold;
+        border-radius: 2px;
+        transition: all $transition-normal;
+    }
+
+    &:hover span {
+        background: $gold-dark;
+    }
+}
+
+// Mobile menu
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: linear-gradient(135deg, $white 0%, $off-white 100%);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: $z-modal;
+    transition: right $transition-normal;
+    overflow-y: auto;
+
+    @media (min-width: $breakpoint-tablet) {
+        display: none; // Hide on tablet+
+    }
+
+    &.open {
+        right: 0;
+    }
+
+    &__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: transparent;
+        border: none;
+        font-size: 2rem;
+        color: $dark-gray;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: color $transition-fast;
+
+        &:hover {
+            color: $primary-gold;
+        }
+    }
+
+    &__nav {
+        margin-top: 5rem;
+        padding: 0 $spacing-md;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: $spacing-sm;
+
+                a {
+                    display: block;
+                    padding: $spacing-sm;
+                    color: $dark-gray;
+                    font-size: 1.125rem;
+                    font-weight: $font-weight-medium;
+                    text-decoration: none;
+                    border-bottom: 1px solid $light-gray;
+                    transition: all $transition-fast;
+
+                    &:hover {
+                        color: $primary-gold;
+                        padding-left: $spacing-sm + 0.5rem;
+                        border-bottom-color: $primary-gold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Overlay when menu is open
+.mobile-menu.open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+.nav__menu {
+    display: none !important;
+
+    @media (min-width: 768px) {
+        display: flex !important;
+    }
+}
+
+// Force show hamburger on mobile
+.hamburger {
+    display: flex !important;
+
+    @media (min-width: 768px) {
+        display: none !important;
     }
 }

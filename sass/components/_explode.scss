@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+.explode-section {
+    min-height: 200vh; 
+    background: linear-gradient(180deg, $black 0%, $white 10%);
+    padding: $spacing-xl 0 0;
+    position: relative;
+
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xxl 0 0;
+    }
+
+    .section-title,
+    .section-subtitle {
+        color: $white;
+        margin-bottom: $spacing-md;
+    }
+}
+
+#explode-view {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    display: block;
+    margin: $spacing-lg auto;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    background-color: transparent;
+
+    @media (max-width: $breakpoint-tablet) {
+        max-width: 100%;
+    }
+}
+
+.explode-description {
+    max-width: 700px;
+    margin: $spacing-lg auto 0;
+    text-align: center;
+    font-size: 1rem;
+    color: $medium-gray;
+    line-height: 1.6;
+    padding: 0 $spacing-md;
+}

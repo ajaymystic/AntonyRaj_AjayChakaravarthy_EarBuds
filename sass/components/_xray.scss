@@ -21,9 +21,14 @@
     border-radius: $radius-lg;
     box-shadow: $shadow-lg;
     overflow: hidden;
+    pointer-events: none;
 
     @media (min-width: $breakpoint-tablet) {
         height: 600px;
+    }
+
+    * {
+        pointer-events: auto;
     }
 }
 
@@ -37,6 +42,7 @@
     top: 0;
     left: 0;
     transition: width 0.1s ease-out;
+    pointer-events: none; 
 
     &::after {
         content: '';
@@ -77,6 +83,8 @@
     background: linear-gradient(to right, $primary-gold 0%, $primary-gold 50%, $medium-gray 50%, $medium-gray 100%);
     outline: none;
     cursor: pointer;
+    z-index: 100; 
+    pointer-events: auto; 
 
     @media (min-width: $breakpoint-tablet) {
         bottom: -80px;

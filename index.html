@@ -12,19 +12,44 @@
     
     <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav__logo">LuxAudio</div>
-            <ul class="nav__menu">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#explode-view-section">Explore</a></li>
-                <li><a href="#specs">Specs</a></li>
-                <li><a href="#xray">X-Ray</a></li>
-                <li><a href="#colors">Colors</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#ar-view">AR View</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="nav">
+        <div class="nav__logo">LuxAudio</div>
+        
+        <!-- Desktop Menu - hide on mobile -->
+        <ul class="nav__menu">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#explode-view-section">Explore</a></li>
+            <li><a href="#specs">Specs</a></li>
+            <li><a href="#xray">X-Ray</a></li>
+            <li><a href="#colors">Colors</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#ar-view">AR View</a></li>
+        </ul>
+
+        <!-- Hamburger Button - show on mobile -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+</header>
+
+
+<div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu__close" id="close-menu" aria-label="Close menu">✕</button>
+    <nav class="mobile-menu__nav">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#explode-view-section">Explore</a></li>
+            <li><a href="#specs">Specs</a></li>
+            <li><a href="#xray">X-Ray</a></li>
+            <li><a href="#colors">Colors</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#ar-view">AR View</a></li>
+        </ul>
+    </nav>
+</div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">

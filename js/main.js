@@ -17,11 +17,13 @@
     
     // Variables - Navigation
     const navLinks = document.querySelectorAll(".nav__menu a");
+
     // Variables - Mobile Menu
     const hamburger = document.querySelector("#hamburger");
     const mobileMenu = document.querySelector("#mobile-menu");
     const closeButton = document.querySelector("#close-menu");
     const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+
 
     // Hotspot data for AR model
     const infoBoxes = [
@@ -41,7 +43,6 @@
             title: "360 AUDIO",
             text: "360 Audio places sound all around you, while Dolby Head Tracking™ technology delivers an incredible three-dimensional listening experience.",
             image: "images/render5.jpg"
-
         },
         {
             title: "Ultra Fast Charging",
@@ -94,7 +95,6 @@
 
     // I'm moving the X-ray divisor based on slider value
     function moveDivisor() {
-
         divisor.style.width = `${slider.value}%`;
         if (divisor && slider) {
             divisor.style.width = `${slider.value}%`;
@@ -104,9 +104,15 @@
 
     // I'm resetting the slider to middle position
     function resetSlider() {
-
         slider.value = 50;
         moveDivisor();
+    }
+
+    // I'm toggling the mobile menu
+    function toggleMobileMenu() {
+        if (mobileMenu) {
+            mobileMenu.classList.toggle("open");
+        }
     }
 
     // I'm toggling the mobile menu
@@ -136,6 +142,7 @@
         }
 
         // I'm rendering the first frame when it loads
+
         if (images[0]) {
             images[0].addEventListener('load', render);
         }
@@ -257,6 +264,7 @@
                     scrub: 1,
                     start: 'top top',
                     // end: '+=5000'
+
                 },
                 onUpdate: render
             });
@@ -281,13 +289,6 @@
             modelViewer.addEventListener('progress', handleModelProgress);
         }
 
-        // I'm setting up X-ray slider
-
-        // if (slider && divisor) {
-            slider.addEventListener("input", moveDivisor);
-            window.addEventListener("load", moveDivisor);
-            resetSlider();
-        // }
 
         if (slider && divisor) {
             slider.addEventListener("input", moveDivisor);
@@ -325,3 +326,4 @@
 
     init();
 })();
+
